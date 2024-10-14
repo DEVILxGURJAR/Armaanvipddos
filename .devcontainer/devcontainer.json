@@ -1,8 +1,12 @@
 {
-    "name": "armaanvipddos Codespace",
+    "name": "My Codespace",
     "image": "mcr.microsoft.com/vscode/devcontainers/python:3.8",
-    "postStartCommand": "echo '*'; echo '*         @Luci_Magic Bot Running      *'; echo '*'; python /workspaces/armaanvipddos/Luci.pu")",
-    "postCreateCommand": "pip install pymongo python-telegram-bot pyTelegramBotAPI certifi && chmod +x /workspaces/armaanvipddos/*",
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    },
+    "postStartCommand": "REPO_NAME=$(basename $(git rev-parse --show-toplevel)); python3 /workspaces/armaanvipddos/soul.py",
     "customizations": {
         "vscode": {
             "settings": {
